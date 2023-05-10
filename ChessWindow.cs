@@ -16,8 +16,6 @@ namespace Chess
             board = new Board(this);
             Board.CurrentPlayer = ChessColor.NONE;
             TimeButton.MouseDown += click;
-            Undo.MouseDown += click;
-            Undo.MouseUp += ReleasedButton;
             RestartButton.MouseUp += click;
         }
         public ChessColor previousPlayer = ChessColor.WHITE;
@@ -42,14 +40,6 @@ namespace Chess
                         if (timer != null) StopTimer();
                         TimeButton.Text = "Start";
                         Board.CurrentPlayer = ChessColor.NONE;
-                        break;
-                }
-            if (sender.GetType() == typeof(PictureBox))
-                switch (((PictureBox)sender).Name)
-                {
-                    case "Undo":
-                        Undo.Image = Properties.Resources.undoArrrowClicked;
-                        ShowPreviousMove();
                         break;
                 }
         }
@@ -96,10 +86,6 @@ namespace Chess
                 Board.Window.GameState.Text = "NORMAL";
                 Board.Window.GameState.ForeColor = System.Drawing.Color.OliveDrab;
             }
-        }
-        void ReleasedButton(object sender, MouseEventArgs e)
-        {
-            Undo.Image = Properties.Resources.undoArrrow;
         }
         PreviousBoardState previousMove { get { return Board.previousMoves.Last(); } }
         PlayerTime Black = new PlayerTime(0, 0);

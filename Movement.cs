@@ -83,7 +83,7 @@ namespace Chess
             }
             for (int i = 0; i < availableMoves.Length; i++)
                 if (availableMoves[i].HasValue)
-                    return true;//it means that there is a solution to prevent the checkmate.
+                    return true;
             return false;
         }
         bool CanMakeMove(int y, int x)
@@ -226,25 +226,28 @@ namespace Chess
         void AngelMove(PieceMove?[] moves, bool angel)
         {
             int angelDir = angel ? 2 : 1;
-            if(pieceTile.piece.color == ChessColor.BLACK)
+            int moveCount = 4;
+
+            if (pieceTile.piece.color == ChessColor.WHITE)
             {
-                moves[0] = destination(2 * angelDir, 0);
-                moves[1] = destination(-2 * angelDir, 0);
-                moves[2] = destination(0, 2 * angelDir);
-                moves[3] = destination(0, -2 * angelDir);
-            }
-            else
-            {
-                moves[0] = destination(2 * angelDir, 0);
-                moves[1] = destination(-2 * angelDir, 0);
-                moves[2] = destination(0, 2 * angelDir);
-                moves[3] = destination(0, -2 * angelDir);
+                moveCount = 8;
                 moves[4] = destination(4 * angelDir, 0);
                 moves[5] = destination(-4 * angelDir, 0);
                 moves[6] = destination(0, 4 * angelDir);
                 moves[7] = destination(0, -4 * angelDir);
             }
+
+            moves[0] = destination(2 * angelDir, 0);
+            moves[1] = destination(-2 * angelDir, 0);
+            moves[2] = destination(0, 2 * angelDir);
+            moves[3] = destination(0, -2 * angelDir);
+
+            for (int i = moveCount; i < moves.Length; i++)
+            {
+                moves[i] = null; // Setează restul elementelor la null
+            }
         }
+
         PieceMove? LineDestination(int y, int x)
         {
             if (previousMove == null) return null;

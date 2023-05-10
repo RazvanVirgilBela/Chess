@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Chess));
             this.RestartButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Undo = new System.Windows.Forms.PictureBox();
             this.GameState = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,8 +40,6 @@
             this.BlackTimer = new System.Windows.Forms.Label();
             this.State = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Undo)).BeginInit();
             this.Timer.SuspendLayout();
             this.State.SuspendLayout();
             this.SuspendLayout();
@@ -62,8 +58,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.Undo);
             this.groupBox1.Controls.Add(this.RestartButton);
             this.groupBox1.Location = new System.Drawing.Point(750, 10);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -73,26 +67,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(53, 26);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // Undo
-            // 
-            this.Undo.Location = new System.Drawing.Point(18, 26);
-            this.Undo.Margin = new System.Windows.Forms.Padding(2);
-            this.Undo.Name = "Undo";
-            this.Undo.Size = new System.Drawing.Size(24, 21);
-            this.Undo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Undo.TabIndex = 3;
-            this.Undo.TabStop = false;
             // 
             // GameState
             // 
@@ -210,8 +184,6 @@
             this.Text = "Chess";
             this.Load += new System.EventHandler(this.Chess_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Undo)).EndInit();
             this.Timer.ResumeLayout(false);
             this.Timer.PerformLayout();
             this.State.ResumeLayout(false);
@@ -231,8 +203,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label WhiteTimer;
-        private System.Windows.Forms.PictureBox Undo;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox State;
     }
 }

@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace Chess
 {
-    public enum PieceKind { King, Queen, Pawn,Angel , Bishop, Knight, Rook, EMPTY }
+    public enum PieceKind { King, Queen, Pawn, Angel, Bishop, Knight, Rook, EMPTY }
     public struct ChessPiece
     {
         public bool firstMove { get; set; }
@@ -64,6 +64,7 @@ namespace Chess
             key = key.Remove(0, 1);
             switch (key)
             {
+                case "Angel": piecekind = PieceKind.Angel;break;
                 case "Bishop": piecekind = PieceKind.Bishop; break;
                 case "Rook": piecekind = PieceKind.Rook; break;
                 case "Queen": piecekind = PieceKind.Queen; break;
